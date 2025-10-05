@@ -1,6 +1,7 @@
 import {Link} from "react-router-dom";
+import { useCart } from "../store/CartContext";
 function Navbar() {
-  const total = 25000; //No se usa por ahora
+  const { total } = useCart();
   const token = false;
 
   return (
@@ -26,6 +27,9 @@ function Navbar() {
           <Link className="btn btn-success" to="/cart">
             🛒 Carrito de compras
           </Link>
+          <span className="btn btn-outline-light disabled">
+            Total: ${total.toFixed(2)}
+          </span>
           </div>
         </div>
     </nav>

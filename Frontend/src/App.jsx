@@ -9,10 +9,11 @@ import Cart from "./components/Pages/Cart.jsx";
 import Pizza from "./components/Pages/Pizza.jsx";
 import Profile from "./components/Pages/Profile.jsx";
 import NotFound from "./components/Pages/NotFound.jsx";
-
+import { CartProvider } from "./store/CartContext.jsx";
 function App() {
   return (
     <div>
+      <CartProvider>
       <BrowserRouter>
         <Navbar />
         <Routes>
@@ -26,6 +27,7 @@ function App() {
         </Routes>
         <Footer />
       </BrowserRouter>
+      </CartProvider>
     </div>
   );
 }
